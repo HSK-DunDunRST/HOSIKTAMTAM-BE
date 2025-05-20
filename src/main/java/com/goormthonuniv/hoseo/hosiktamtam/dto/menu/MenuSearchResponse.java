@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MenuSearchResponse {
-
     private List<MenuDto> menus;
 
     @Data
@@ -20,7 +19,6 @@ public class MenuSearchResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class MenuDto {
-
         private Long menuId;
         private String menuName;
         private String restaurantName;

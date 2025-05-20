@@ -9,17 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OAuthLoginRequest {
-
-    private String token;
-}
-
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class TokenResponse {
-
     private String accessToken;
     private String refreshToken;
     private UserInfo user;
@@ -29,7 +19,6 @@ public class TokenResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class UserInfo {
-
         private Long userId;
         private String nickname;
         private String profileImage;

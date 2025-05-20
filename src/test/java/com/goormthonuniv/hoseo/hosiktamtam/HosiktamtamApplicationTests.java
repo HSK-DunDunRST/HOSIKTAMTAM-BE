@@ -9,5 +9,4 @@ class HosiktamtamApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

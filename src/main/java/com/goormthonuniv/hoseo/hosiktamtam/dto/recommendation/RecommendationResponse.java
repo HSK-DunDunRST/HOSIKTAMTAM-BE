@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RecommendationResponse {
-
     private List<RecommendedMenuDto> recommendedMenus;
 
     @Data
@@ -20,7 +19,6 @@ public class RecommendationResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class RecommendedMenuDto {
-
         private String menuName;
         private String restaurantName;
         private Integer orderCount;

@@ -28,11 +28,11 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/auth/**").permitAll()
-                .requestMatchers("/restaurants/**").permitAll()
-                .requestMatchers("/menus/search").permitAll()
-                .requestMatchers("/cafeteria/congestion").permitAll()
-                .anyRequest().authenticated()
+                        .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/restaurants/**").permitAll()
+                        .requestMatchers("/menus/search").permitAll()
+                        .requestMatchers("/cafeteria/congestion").permitAll()
+                        .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

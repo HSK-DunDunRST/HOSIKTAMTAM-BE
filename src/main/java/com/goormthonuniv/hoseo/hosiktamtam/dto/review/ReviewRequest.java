@@ -1,4 +1,4 @@
-package com.goormthonuniv.hoseo.hosiktamtam.dto.favorite;
+package com.goormthonuniv.hoseo.hosiktamtam.dto.review;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FavoriteRequest {
+public class ReviewRequest {
     private Long restaurantId;
+    private Integer rating;
+    private String comment;
 }

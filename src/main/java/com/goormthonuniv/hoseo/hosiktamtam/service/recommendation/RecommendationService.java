@@ -23,23 +23,26 @@ public class RecommendationService {
         List<RecommendationResponse.RecommendedMenuDto> recommendedMenus = new ArrayList<>();
 
         // 예시 데이터
-        recommendedMenus.add(RecommendationResponse.RecommendedMenuDto.builder()
+        RecommendationResponse.RecommendedMenuDto dto1 = RecommendationResponse.RecommendedMenuDto.builder()
                 .menuName("탕수육 + 짜장면")
                 .restaurantName("진보")
                 .orderCount(5)
-                .build());
+                .build();
+        recommendedMenus.add(dto1);
 
-        recommendedMenus.add(RecommendationResponse.RecommendedMenuDto.builder()
+        RecommendationResponse.RecommendedMenuDto dto2 = RecommendationResponse.RecommendedMenuDto.builder()
                 .menuName("마라탕")
                 .restaurantName("한우사골마라탕")
                 .orderCount(3)
-                .build());
+                .build();
+        recommendedMenus.add(dto2);
 
-        recommendedMenus.add(RecommendationResponse.RecommendedMenuDto.builder()
+        RecommendationResponse.RecommendedMenuDto dto3 = RecommendationResponse.RecommendedMenuDto.builder()
                 .menuName("돈까스")
                 .restaurantName("가츠시")
                 .orderCount(2)
-                .build());
+                .build();
+        recommendedMenus.add(dto3);
 
         return RecommendationResponse.builder()
                 .recommendedMenus(recommendedMenus)

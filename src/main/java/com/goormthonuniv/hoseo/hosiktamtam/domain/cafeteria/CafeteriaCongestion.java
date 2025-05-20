@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "cafeteria_congestion")
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class CafeteriaCongestion {
 
     @Id

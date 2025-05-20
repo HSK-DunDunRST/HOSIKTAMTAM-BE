@@ -3,17 +3,14 @@ package com.goormthonuniv.hoseo.hosiktamtam.domain.menu;
 import com.goormthonuniv.hoseo.hosiktamtam.domain.common.BaseTimeEntity;
 import com.goormthonuniv.hoseo.hosiktamtam.domain.restaurant.Restaurant;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "menu")
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Menu extends BaseTimeEntity {
 
     @Id

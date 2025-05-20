@@ -2,10 +2,7 @@ package com.goormthonuniv.hoseo.hosiktamtam.domain.restaurant;
 
 import com.goormthonuniv.hoseo.hosiktamtam.domain.common.BaseTimeEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
@@ -15,9 +12,9 @@ import java.util.List;
 @Entity
 @Table(name = "restaurant")
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Restaurant extends BaseTimeEntity {
 
     @Id

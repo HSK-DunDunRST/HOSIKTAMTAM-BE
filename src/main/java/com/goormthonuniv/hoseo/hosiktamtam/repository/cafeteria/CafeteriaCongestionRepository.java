@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Optional;
 
 public interface CafeteriaCongestionRepository extends JpaRepository<CafeteriaCongestion, Long> {
-
     @Query("SELECT c FROM CafeteriaCongestion c ORDER BY c.lastUpdated DESC")
     Optional<CafeteriaCongestion> findLatest();
 }

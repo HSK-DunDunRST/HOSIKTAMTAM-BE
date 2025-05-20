@@ -22,12 +22,12 @@ public class MenuService {
 
         List<MenuSearchResponse.MenuDto> menuDtos = menus.stream()
                 .map(menu -> MenuSearchResponse.MenuDto.builder()
-                .menuId(menu.getId())
-                .menuName(menu.getName())
-                .restaurantName(menu.getRestaurant().getName())
-                .price(menu.getPrice())
-                .build())
-                .collect(Collectors.toList());
+                        .menuId(menu.getId())
+                        .menuName(menu.getName())
+                        .restaurantName(menu.getRestaurant().getName())
+                        .price(menu.getPrice())
+                        .build())
+                .collect(Collectors.<MenuSearchResponse.MenuDto>toList());
 
         return MenuSearchResponse.builder()
                 .menus(menuDtos)

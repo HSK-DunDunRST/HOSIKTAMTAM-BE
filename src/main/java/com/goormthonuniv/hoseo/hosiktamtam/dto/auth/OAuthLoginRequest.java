@@ -1,4 +1,4 @@
-package com.goormthonuniv.hoseo.hosiktamtam.dto.favorite;
+package com.goormthonuniv.hoseo.hosiktamtam.dto.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FavoriteRequest {
-    private Long restaurantId;
+public class OAuthLoginRequest {
+    private String token;
 }

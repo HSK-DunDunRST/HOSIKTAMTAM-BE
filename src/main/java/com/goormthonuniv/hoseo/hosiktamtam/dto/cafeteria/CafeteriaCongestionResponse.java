@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CafeteriaCongestionResponse {
-
     private Integer totalSeats;
     private Integer usingSeats;
     private Integer availableSeats;

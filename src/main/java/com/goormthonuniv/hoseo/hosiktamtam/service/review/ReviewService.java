@@ -58,15 +58,15 @@ public class ReviewService {
 
         List<ReviewResponse.ReviewDto> reviewDtos = reviews.stream()
                 .map(review -> ReviewResponse.ReviewDto.builder()
-                .id(review.getId())
-                .userId(review.getUser().getId())
-                .nickname(review.getUser().getNickname())
-                .profileImage(review.getUser().getProfileImage())
-                .rating(review.getRating())
-                .comment(review.getComment())
-                .createdAt(review.getCreatedAt())
-                .build())
-                .collect(Collectors.toList());
+                        .id(review.getId())
+                        .userId(review.getUser().getId())
+                        .nickname(review.getUser().getNickname())
+                        .profileImage(review.getUser().getProfileImage())
+                        .rating(review.getRating())
+                        .comment(review.getComment())
+                        .createdAt(review.getCreatedAt())
+                        .build())
+                .collect(Collectors.<ReviewResponse.ReviewDto>toList());
 
         return ReviewResponse.builder()
                 .reviews(reviewDtos)

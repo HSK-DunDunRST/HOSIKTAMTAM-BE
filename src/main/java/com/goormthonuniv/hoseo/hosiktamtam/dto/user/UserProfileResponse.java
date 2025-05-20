@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserProfileResponse {
-
     private Long userId;
     private String nickname;
     private String profileImage;
@@ -24,7 +23,6 @@ public class UserProfileResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class FavoriteRestaurantDto {
-
         private Long restaurantId;
         private String name;
         private String mainImage;
@@ -35,7 +33,6 @@ public class UserProfileResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class RecentOrderDto {
-
         private Long restaurantId;
         private String restaurantName;
         private String menuName;

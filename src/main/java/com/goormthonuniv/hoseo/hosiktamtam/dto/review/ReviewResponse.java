@@ -12,19 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReviewRequest {
-
-    private Long restaurantId;
-    private Integer rating;
-    private String comment;
-}
-
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class ReviewResponse {
-
     private List<ReviewDto> reviews;
 
     @Data
@@ -32,7 +20,6 @@ public class ReviewResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class ReviewDto {
-
         private Long id;
         private Long userId;
         private String nickname;

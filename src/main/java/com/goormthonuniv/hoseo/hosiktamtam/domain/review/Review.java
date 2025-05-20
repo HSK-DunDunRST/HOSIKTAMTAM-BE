@@ -4,17 +4,14 @@ import com.goormthonuniv.hoseo.hosiktamtam.domain.common.BaseTimeEntity;
 import com.goormthonuniv.hoseo.hosiktamtam.domain.restaurant.Restaurant;
 import com.goormthonuniv.hoseo.hosiktamtam.domain.user.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "review")
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Review extends BaseTimeEntity {
 
     @Id

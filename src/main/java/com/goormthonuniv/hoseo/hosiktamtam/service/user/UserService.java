@@ -29,11 +29,11 @@ public class UserService {
 
         List<UserProfileResponse.FavoriteRestaurantDto> favoriteRestaurants = favorites.stream()
                 .map(favorite -> UserProfileResponse.FavoriteRestaurantDto.builder()
-                .restaurantId(favorite.getRestaurant().getId())
-                .name(favorite.getRestaurant().getName())
-                .mainImage(favorite.getRestaurant().getMainImage())
-                .build())
-                .collect(Collectors.toList());
+                        .restaurantId(favorite.getRestaurant().getId())
+                        .name(favorite.getRestaurant().getName())
+                        .mainImage(favorite.getRestaurant().getMainImage())
+                        .build())
+                .collect(Collectors.<UserProfileResponse.FavoriteRestaurantDto>toList());
 
         // 최근 주문은 실제 구현 시 별도의 Order 엔티티가 필요함
         // 여기서는 간단히 빈 리스트로 처리

@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface MenuRepository extends JpaRepository<Menu, Long> {
-
     List<Menu> findByRestaurantId(Long restaurantId);
 
     @Query("SELECT m FROM Menu m WHERE m.name LIKE %:query%")

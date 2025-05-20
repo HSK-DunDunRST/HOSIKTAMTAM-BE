@@ -47,7 +47,7 @@ public class RestaurantService {
 
         List<RestaurantListResponse.RestaurantDto> restaurantDtos = restaurants.stream()
                 .map(this::convertToRestaurantDto)
-                .collect(Collectors.toList());
+                .collect(Collectors.<RestaurantListResponse.RestaurantDto>toList());
 
         return RestaurantListResponse.builder()
                 .restaurants(restaurantDtos)
@@ -62,12 +62,12 @@ public class RestaurantService {
         List<Menu> menus = menuRepository.findByRestaurantId(restaurantId);
         List<RestaurantDetailResponse.MenuDto> menuDtos = menus.stream()
                 .map(menu -> RestaurantDetailResponse.MenuDto.builder()
-                .id(menu.getId())
-                .name(menu.getName())
-                .price(menu.getPrice())
-                .image(menu.getImage())
-                .build())
-                .collect(Collectors.toList());
+                        .id(menu.getId())
+                        .name(menu.getName())
+                        .price(menu.getPrice())
+                        .image(menu.getImage())
+                        .build())
+                .collect(Collectors.<RestaurantDetailResponse.MenuDto>toList());
 
         Double rating = reviewRepository.getAverageRatingByRestaurantId(restaurantId);
         Long reviewCount = reviewRepository.countByRestaurantId(restaurantId);
@@ -92,7 +92,7 @@ public class RestaurantService {
 
         List<RestaurantListResponse.RestaurantDto> restaurantDtos = restaurants.stream()
                 .map(this::convertToRestaurantDto)
-                .collect(Collectors.toList());
+                .collect(Collectors.<RestaurantListResponse.RestaurantDto>toList());
 
         return RestaurantListResponse.builder()
                 .restaurants(restaurantDtos)
@@ -109,28 +109,28 @@ public class RestaurantService {
         if (koreanSearchUtil.isChosungKeyword(keyword)) {
             // 초성 검색
             List<String> allRestaurantNames = restaurantRepository.findAll().stream()
-                    .map(Restaurant::getName)
-                    .collect(Collectors.toList());
+                    .map(r -> r.getName())
+                    .collect(Collectors.<String>toList());
 
             List<String> matchedNames = koreanSearchUtil.searchByChosung(allRestaurantNames, keyword);
             restaurants = restaurantRepository.findAll().stream()
                     .filter(r -> matchedNames.contains(r.getName()))
                     .limit(limit)
-                    .collect(Collectors.toList());
+                    .collect(Collectors.<Restaurant>toList());
         } else {
             // 일반 검색 (prefix matching)
             restaurants = restaurantRepository.findByNameStartingWith(keyword).stream()
                     .limit(limit)
-                    .collect(Collectors.toList());
+                    .collect(Collectors.<Restaurant>toList());
         }
 
         List<RestaurantAutocompleteResponse.AutocompleteResult> results = restaurants.stream()
                 .map(restaurant -> RestaurantAutocompleteResponse.AutocompleteResult.builder()
-                .restaurantId(restaurant.getId())
-                .name(restaurant.getName())
-                .mainImage(restaurant.getMainImage())
-                .build())
-                .collect(Collectors.toList());
+                        .restaurantId(restaurant.getId())
+                        .name(restaurant.getName())
+                        .mainImage(restaurant.getMainImage())
+                        .build())
+                .collect(Collectors.<RestaurantAutocompleteResponse.AutocompleteResult>toList());
 
         return RestaurantAutocompleteResponse.builder()
                 .results(results)

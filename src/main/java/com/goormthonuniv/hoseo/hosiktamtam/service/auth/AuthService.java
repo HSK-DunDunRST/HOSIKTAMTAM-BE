@@ -26,11 +26,11 @@ public class AuthService {
 
         User user = userRepository.findByOauthId(oauthId)
                 .orElseGet(() -> userRepository.save(User.builder()
-                .oauthId(oauthId)
-                .provider(User.Provider.google)
-                .nickname(nickname)
-                .profileImage(profileImage)
-                .build()));
+                        .oauthId(oauthId)
+                        .provider(User.Provider.google)
+                        .nickname(nickname)
+                        .profileImage(profileImage)
+                        .build()));
 
         return generateTokenResponse(user);
     }
@@ -45,11 +45,11 @@ public class AuthService {
 
         User user = userRepository.findByOauthId(oauthId)
                 .orElseGet(() -> userRepository.save(User.builder()
-                .oauthId(oauthId)
-                .provider(User.Provider.kakao)
-                .nickname(nickname)
-                .profileImage(profileImage)
-                .build()));
+                        .oauthId(oauthId)
+                        .provider(User.Provider.kakao)
+                        .nickname(nickname)
+                        .profileImage(profileImage)
+                        .build()));
 
         return generateTokenResponse(user);
     }

@@ -2,17 +2,14 @@ package com.goormthonuniv.hoseo.hosiktamtam.domain.user;
 
 import com.goormthonuniv.hoseo.hosiktamtam.domain.common.BaseTimeEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "user")
 @Getter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class User extends BaseTimeEntity {
 
     @Id

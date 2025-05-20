@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ReviewRepository extends JpaRepository<Review, Long> {
-
     List<Review> findByRestaurantId(Long restaurantId);
 
     @Query("SELECT AVG(r.rating) FROM Review r WHERE r.restaurant.id = :restaurantId")
