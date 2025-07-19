@@ -1,61 +1,62 @@
 spring:
-  datasource:
-    url: DATABASE_URL
-    username: DATABASE_USERNAME
-    password: DATABASE_PASSWORD
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  # 주석 처리된 속성은 모두 .gitignore에 추가되어 로컬 환경으로 구성될 예정입니다.
+  # datasource:
+  #   url: DATABASE_URL
+  #   username: DATABASE_USERNAME
+  #   password: DATABASE_PASSWORD
+  #   driver-class-name: com.mysql.cj.jdbc.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
-    show-sql: true
-    open-in-view: false
+  # jpa:
+  #   hibernate:
+  #     ddl-auto: update
+  #   properties:
+  #     hibernate:
+  #       format_sql: true
+  #       dialect: org.hibernate.dialect.MySQLDialect
+  #   show-sql: true
+  #   open-in-view: false
 
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: GOOGLE_CLIENT_ID
-            client-secret: GOOGLE_CLIENT_SECRET
-            scope:
-              - email
-              - profile
-          kakao:
-            client-id: KAKAO_CLIENT_ID
-            client-secret: KAKAO_CLIENT_SECRET
-            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
-            authorization-grant-type: authorization_code
-            scope:
-              - profile_nickname
-              - profile_image
-            client-name: Kakao
-            client-authentication-method: client_secret_post
-        provider:
-          kakao:
-            authorization-uri: https://kauth.kakao.com/oauth/authorize
-            token-uri: https://kauth.kakao.com/oauth/token
-            user-info-uri: https://kapi.kakao.com/v2/user/me
-            user-name-attribute: id
-
+  # security:
+  #   oauth2:
+  #     client:
+  #       registration:
+  #         google:
+  #           client-id: GOOGLE_CLIENT_ID
+  #           client-secret: GOOGLE_CLIENT_SECRET
+  #           scope:
+  #             - email
+  #             - profile
+  #         kakao:
+  #           client-id: KAKAO_CLIENT_ID
+  #           client-secret: KAKAO_CLIENT_SECRET
+  #           redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+  #           authorization-grant-type: authorization_code
+  #           scope:
+  #             - profile_nickname
+  #             - profile_image
+  #           client-name: Kakao
+  #           client-authentication-method: client_secret_post
+  #       provider:
+  #         kakao:
+  #           authorization-uri: https://kauth.kakao.com/oauth/authorize
+  #           token-uri: https://kauth.kakao.com/oauth/token
+  #           user-info-uri: https://kapi.kakao.com/v2/user/me
+  #           user-name-attribute: id
   profiles:
     active: local
-
-jwt:
-  secret: JWT_SECRET
-  access-token-validity-in-seconds: 3600  # 1시간
-  refresh-token-validity-in-seconds: 2592000  # 30일
 
 server:
   servlet:
     context-path: /api
   port: 8080
 
+# jwt:
+#   secret: JWT_SECRET
+#   access-token-validity-in-seconds: 3600  # 1시간
+#   refresh-token-validity-in-seconds: 2592000  # 30일
+  
 logging:
-  level:
-    org.hibernate.SQL: debug
-    org.hibernate.type.descriptor.sql: trace
+    level:
+        '[org.springframework.security]': DEBUG
+        '[org.hibernate.SQL]': DEBUG
+        '[org.hibernate.type.descriptor.sql]': TRACE
